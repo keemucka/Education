@@ -1,0 +1,11 @@
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\bin\Debug\Laboratory_Task_5.exe.config
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\bin\Debug\Laboratory_Task_5.exe
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\bin\Debug\Laboratory_Task_5.pdb
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.csprojAssemblyReference.cache
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.Form1.resources
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.Properties.Resources.resources
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.csproj.GenerateResource.cache
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.exe
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.pdb
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.Alarm_clock.resources
+C:\Азат\КНИТУ\Визуальное программирование\Laboratory_Task_5\Laboratory_Task_5\Laboratory_Task_5\obj\Debug\Laboratory_Task_5.Alarm_clock_2.resources
