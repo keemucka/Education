@@ -56,32 +56,39 @@ namespace Password
 
         public void checkUser(User UserForCheck)
         {
-            string[] info;
-            string s;
-            StreamReader sr = new StreamReader(@"C:\Азат\КНИТУ\Визуальное программирование\Laboratory Task 6\Password\user.txt");
-            int numOfLine = 0;
-            while ((s = sr.ReadLine()) != null)
+           
+            try
             {
-                info = s.Split(' ');
-                User user = new User(info[0], info[1], info[2]);
-                if ((user.login == UserForCheck.login) && (user.password == UserForCheck.password))
+                string[] info;
+                string s;
+                StreamReader sr = new StreamReader(@"user.txt");
+                int numOfLine = 0;
+                while ((s = sr.ReadLine()) != null)
                 {
-
-                    UserForCheck.role = info[2];
-                    IsUserExist = true;
-                    Form2 form2 = new Form2();
-                    form2.currentLineMetod = numOfLine;
-                    form2.currentUserMetod = UserForCheck;
-                    form2.Show();
-                    break;
+                    info = s.Split(' ');
+                    User user = new User(info[0], info[1], info[2]);
+                    if ((user.login == UserForCheck.login) && (user.password == UserForCheck.password))
+                    {
+                        UserForCheck.role = info[2];
+                        IsUserExist = true;
+                        Form2 form2 = new Form2();
+                        form2.currentLineMetod = numOfLine;
+                        form2.currentUserMetod = UserForCheck;
+                        form2.Show();
+                        break;
+                    }
+                    numOfLine++;
                 }
-                numOfLine++;
+                sr.Close();
+                if (IsUserExist == false)
+                {
+                    MessageBox.Show("Неверный логин или пароль");
+                }
             }
-            sr.Close();
-            if (IsUserExist == false)
+            catch(System.IO.FileNotFoundException)
             {
-                MessageBox.Show("Неверный логин или пароль");
-            }
+                MessageBox.Show("Файл поврежден, путь не найден");
+            }            
         }
     }
 }

@@ -29,18 +29,25 @@ namespace Password
         }
         public void ChangePassword(string newPassword)
         {
-            string[] s; 
-            string[] data = File.ReadAllLines(@"C:\Азат\КНИТУ\Визуальное программирование\Laboratory Task 6\Password\user.txt");
-            for (int i = 0;i<data.Length;i++)
-            {               
-                if (i == currentLine)
+            try
+            {
+                string[] s;
+                string[] data = File.ReadAllLines(@"user.txt");
+                for (int i = 0; i < data.Length; i++)
                 {
-                    s = data[i].Split(' ');
-                    s[1] = newPassword;
-                    data[i] = s[0] + " " + s[1] + " " + s[2];
+                    if (i == currentLine)
+                    {
+                        s = data[i].Split(' ');
+                        s[1] = newPassword;
+                        data[i] = s[0] + " " + s[1] + " " + s[2];
+                    }
                 }
+                File.WriteAllLines(@"user.txt", data);
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                MessageBox.Show("Файл поврежден, путь не найден");
             }            
-            File.WriteAllLines(@"C:\Азат\КНИТУ\Визуальное программирование\Laboratory Task 6\Password\user.txt", data);  
         }
 
         public Form2()
@@ -50,8 +57,24 @@ namespace Password
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangePassword(textBox1.Text);
-            this.Close();
+            if (textBox1.Text == currentUser.password.ToString()) 
+            {
+                MessageBox.Show("Новый пароль не может совпадать со старым");
+            }
+            else
+            {
+                if (textBox1.Text == "")
+                {
+                    MessageBox.Show("Введите данные");
+                }
+                else
+                {
+                    ChangePassword(textBox1.Text);
+                    this.Close();
+                }
+            }
+           
+           
         }
 
         private void Form2_Load(object sender, EventArgs e)

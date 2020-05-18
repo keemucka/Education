@@ -52,7 +52,11 @@ namespace Lb8
                          join g in db.groups on stud.code_group equals g.code_group
                          orderby stud.code_stud
                          select new { stud.code_stud, stud.surname, stud.name, g.name_group, stud.code_group }).ToList();
-           if (textBox1.Text != "")
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Выберите критерий");
+            }            
+            if (textBox1.Text != "")
             {
                 switch (comboBox1.SelectedIndex)
                 {

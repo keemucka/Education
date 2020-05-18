@@ -12,14 +12,32 @@ namespace Lb8
 {
     public partial class FormEditStudent : Form
     {
-        public void Correct()
+        public bool Correct()
         {
+            bool res = true;
             string s = textBox1.Text.Trim();
             s[0].ToString().ToUpper();
+            foreach (char c in s)
+            {
+                if (!Char.IsLetter(c))
+                {
+                    MessageBox.Show("Допустимы только буквенные символы");
+                    res = false;
+                }
+            }
             textBox1.Text = s;
             s = textBox2.Text.Trim();
             s[0].ToString().ToUpper();
             textBox2.Text = s;
+            foreach (char c in s)
+            {
+                if (!Char.IsLetter(c))
+                {
+                    MessageBox.Show("Допустимы только буквенные символы");
+                    res = false;
+                }
+            }
+            return res;
         }
         Form1 form1 = new Form1();
         public demoEntities db = new demoEntities();
@@ -45,18 +63,31 @@ namespace Lb8
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Correct();
-            var result = ((Form1)Owner).db.students.SingleOrDefault(w => w.code_stud == item.code_stud);
-            result.surname = textBox1.Text.ToString();
-            result.name = textBox2.Text.ToString();
-            var query = (from g in db.groups
-                         where g.name_group == comboBox1.SelectedItem.ToString()
-                         select g.code_group).ToList();
-            result.code_group = query[0];
-            ((Form1)Owner).db.SaveChanges();
+            if ((textBox1.Text == "") || (textBox2.Text == ""))
+            {
+                MessageBox.Show("Введите данные");
+            }
+            else if (Correct())
+            {
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("Выберите критерий");
+                }
+                else
+                {
+                    var result = ((Form1)Owner).db.students.SingleOrDefault(w => w.code_stud == item.code_stud);
+                    result.surname = textBox1.Text.ToString();
+                    result.name = textBox2.Text.ToString();
+                    var query = (from g in db.groups
+                                 where g.name_group == comboBox1.SelectedItem.ToString()
+                                 select g.code_group).ToList();
+                    result.code_group = query[0];
+                    ((Form1)Owner).db.SaveChanges();
 
-            ((Form1)Owner).studentsheet = ((Form1)Owner).db.students.OrderBy(o => o.code_stud).ToList();
-            this.Close();
+                    ((Form1)Owner).studentsheet = ((Form1)Owner).db.students.OrderBy(o => o.code_stud).ToList();
+                    this.Close();
+                }               
+            }            
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -40,26 +40,26 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(905, 207);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 207);
             this.dataGridView1.TabIndex = 0;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "дисциплина",
-            "преподаватели",
-            "студенты"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 238);
+            "Дисциплина",
+            "Преподаватели",
+            "Студенты"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 238);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(358, 235);
+            this.button1.Location = new System.Drawing.Point(322, 235);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.Size = new System.Drawing.Size(133, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Просмотреть";
             this.button1.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 238);
+            this.textBox1.Location = new System.Drawing.Point(139, 238);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(126, 20);
             this.textBox1.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 349);
+            this.ClientSize = new System.Drawing.Size(467, 271);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);

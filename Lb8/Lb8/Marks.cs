@@ -21,6 +21,23 @@ namespace Lb8
             InitializeComponent();
         }
 
+        public bool Correct()
+        {
+            bool res = true;
+            string s = textBox1.Text.Trim();
+            s[0].ToString().ToUpper();
+            foreach (char c in s)
+            {
+                if (!Char.IsLetter(c))
+                {
+                    MessageBox.Show("Допустимы только буквенные символы");
+                    res = false;
+                }
+            }
+            textBox1.Text = s;           
+            return res;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             var query = (from prog in db.progress
@@ -30,7 +47,10 @@ namespace Lb8
                          join h in db.groups on g.code_group equals h.code_group
                          orderby h.code_group
                          select new {h.name_group,g.name,g.surname,k.name_subject,l.name_lector, prog.estimate,prog.date_exam}).ToList();
-
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Выберите критерий");
+            }
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
